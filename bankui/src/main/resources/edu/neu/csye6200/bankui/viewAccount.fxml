@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neu.csye6200.bankui.controller.AccountController">
+    <padding><Insets bottom="40" left="40" right="40" top="40" /></padding>
+
+    <Label text="View Account Form (FXML)" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.rowSpan="1">
+        <font>
+            <Font name="Arial" size="24" />
+        </font>
+        <GridPane.margin>
+            <Insets bottom="20" left="0" right="0" top="20" />
+        </GridPane.margin>
+    </Label>
+
+
+    <Button fx:id="viewButton" defaultButton="true" onAction="#onViewButtonClick" prefHeight="40" prefWidth="200" text="View Accounts" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="1" GridPane.valignment="CENTER">
+        <GridPane.margin>
+            <Insets bottom="20" left="0" right="0" top="20" />
+        </GridPane.margin>
+    </Button>
+   <ScrollPane prefHeight="200.0" prefWidth="200.0">
+     <content>
+       <VBox minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="429.0" fx:id="pnItems">
+            <children>
+            
+                <!--    <Label text="Email ID : " GridPane.columnIndex="0"-->
+                <!--           GridPane.rowIndex="2" >-->
+                <!--    </Label>-->
+                <!--    &lt;!&ndash; Add Email Text Field &ndash;&gt;-->
+                <!--    <TextField fx:id="viewAccountemailField" prefHeight="40"-->
+                <!--               GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+            
+                <Label fx:id="viewAccountResult" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="262.0" wrapText="true" />
+            </children>
+         </VBox>
+     </content>
+   </ScrollPane>
+
+    <Button fx:id="backButton" defaultButton="true" onAction="#onBackButtonClick" prefHeight="40" prefWidth="200" text="Go Back" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="1" GridPane.valignment="CENTER">
+        <GridPane.margin>
+            <Insets bottom="20" left="0" right="0" top="20" />
+        </GridPane.margin>
+    </Button>
+
+
+</VBox>

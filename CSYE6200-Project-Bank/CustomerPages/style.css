@@ -1,0 +1,51 @@
+.containerSection{
+    background-color:rgb(194, 203, 211);
+    background-image:url(https://www.alliantcreditunion.org/images/made/images/uploads/images/Money-Mentor-happy-bank-employees_1226_817_int.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:700px;
+    background-position-x: center;
+}
+
+.btn-group-vertical{
+    margin-top: 350px;
+    margin-left:400px
+}
+
+/* .signupform{
+    
+   
+} */
+
+.loginform{
+    margin-top: 150px;
+    margin-left: 350px;
+    width: 50vw;
+    height:500px;
+}
+
+.containerCRUD{
+    background-color: lightcyan;
+    background-image:url(https://arizent.brightspotcdn.com/dims4/default/384fcd0/2147483647/strip/true/crop/5616x3744+0+0/resize/1024x682!/format/webp/quality/90/?url=https%3A%2F%2Fsource-media-brightspot.s3.amazonaws.com%2F86%2Ff1%2Feb04c3bb4acfb106df54674f396f%2Fbank.Teller.Getty.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:700px;
+    background-position-x: center;
+    
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+footer {
+    margin-bottom: 0px;
+}

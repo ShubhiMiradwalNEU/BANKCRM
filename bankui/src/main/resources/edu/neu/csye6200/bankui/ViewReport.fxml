@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.neu.csye6200.bankui.controller.CustomerController"
+      prefHeight="400.0" prefWidth="600.0">
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+    <Label text="View Customer Form (FXML)" GridPane.columnIndex="0"
+           GridPane.rowIndex="0" GridPane.columnSpan="2"
+           GridPane.rowSpan="1" GridPane.halignment="CENTER" >
+        <font>
+            <Font name="Arial" size="24"/>
+        </font>
+        <GridPane.margin>
+            <Insets top="20" right="0" bottom="20" left="0"/>
+        </GridPane.margin>
+    </Label>
+
+    <!--    <Label text="Email ID : " GridPane.columnIndex="0"-->
+    <!--           GridPane.rowIndex="2" >-->
+    <!--    </Label>-->
+    <!--    &lt;!&ndash; Add Email Text Field &ndash;&gt;-->
+    <!--    <TextField fx:id="viewCustomeremailField" prefHeight="40"-->
+    <!--               GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+
+    <Label fx:id="viewReportResult" prefHeight="60"
+           GridPane.columnIndex="2" GridPane.rowIndex="3" wrapText="true"/>
+
+
+    <Button fx:id="viewButton" text="View Report"
+            prefWidth="200" prefHeight="40" defaultButton="true"
+            GridPane.columnIndex="0" GridPane.rowIndex="4"
+            GridPane.columnSpan="2" GridPane.rowSpan="1"
+            GridPane.halignment="CENTER"
+            GridPane.valignment = "CENTER"
+            onAction="#onviewReportButtonClick">
+        <GridPane.margin>
+            <Insets top="20" right="0" bottom="20" left="0"></Insets>
+        </GridPane.margin>
+    </Button>
+
+    <Button fx:id="backButton" text="Go Back"
+            prefWidth="200" prefHeight="40" defaultButton="true"
+            GridPane.columnIndex="0" GridPane.rowIndex="4"
+            GridPane.columnSpan="2" GridPane.rowSpan="1"
+            GridPane.halignment="CENTER"
+            GridPane.valignment = "CENTER"
+            onAction="#onBackButtonClick">
+        <GridPane.margin>
+            <Insets top="20" right="0" bottom="20" left="0"></Insets>
+        </GridPane.margin>
+    </Button>
+
+
+</VBox>

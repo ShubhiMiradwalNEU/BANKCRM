@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XYZ Bank | Sign Up | Login | </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: lightcyan;">
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid justify-content-center">
+          <a class="navbar-brand" href="index.html">Java Bank</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+     
+
+    <div class="loginform">
+    <form>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="customerid" class="form-control" />
+          <label class="form-label" for="customerid">Customer ID</label>
+        </div>
+      
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" id="password" class="form-control" />
+          <label class="form-label" for="password">Password</label>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="button" id="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+      
+        </div>
+      </form>
+
+      <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">Java Bank</a>
+        </div>
+      </footer>
+      
+      </body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script>
+      $("#submit").click(function (e) {
+      e.preventDefault();
+      let customerid = $("#customerid").val();
+      let password = $("#password").val();
+
+      $.ajax({
+        url: 'http://localhost:8080/customer/getCustomer/' + customerid,
+        type: 'get',
+        dataType: 'json',
+        headers: {
+          "Content-Type": 'application/json',
+          'Accept': 'application/json'
+        },
+        success: function (data) {
+          console.info(data);
+          if(data.password == password){
+            alert("Login successful");
+            localStorage.setItem("customer",JSON.stringify(data));
+          window.location = 'crudOperations.html';
+          } else {
+            alert("Login failed");
+          }
+          
+        },
+        error: function (jqXHR, status, err) {
+          alert("Login failed");
+        }
+      });
+    });
+    </script>
+
+</body>
+</html>

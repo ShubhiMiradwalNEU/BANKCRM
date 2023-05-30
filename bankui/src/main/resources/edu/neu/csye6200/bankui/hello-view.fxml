@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1000" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="edu.neu.csye6200.bankui.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <!-- Beginning of the left part of the Borderpane -->
+    <left>
+
+        <!-- An AnchorPane in the Left BorderPane -->
+        <AnchorPane prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #A9A9A9;" BorderPane.alignment="CENTER">
+            <children>
+
+                <!-- Logo -->
+                <ImageView fitHeight="400.0" fitWidth="400.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+         <padding>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+         </padding>
+        </AnchorPane>
+    </left>
+    <!-- Ending of the left part of the Borderpane -->
+
+    <!-- Beginning of the right part of the Borderpane -->
+    <right>
+        <AnchorPane layoutX="500.0" layoutY="500.0" prefHeight="700.0" prefWidth="600.0">
+            <children>
+
+                <!-- The Beginning of Logo -->
+                <ImageView fitHeight="57.0" fitWidth="101.0" layoutX="122.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@cart.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="203.0" layoutY="1.0" prefHeight="57.0" prefWidth="263.0" style="-fx-background-color: transparent; -fx-text-fill: #24a0ed;" text="Relationship Manager Login">
+                    <font>
+                        <Font name="SansSerif Regular" size="18.0" />
+                    </font>
+                </Label>
+                <!-- The End of Logo -->
+
+                <!-- The Beginning of Login form -->
+                <Label layoutX="244.0" layoutY="60.0" prefHeight="30.0" prefWidth="90.0" style="-fx-text-fill: #A9A9A9;" text="Login">
+                    <font>
+                        <Font name="SansSerif Regular" size="30.0" />
+                    </font>
+                </Label>
+                <Button fx:id="cancelButton" layoutX="502.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #A9A9A9; -fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;" text="Cancel">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="loginUsernameTextField" layoutX="150.0" layoutY="100.0" prefHeight="30.0" prefWidth="300.0" promptText="Username / Email" style="-fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;">
+                    <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="TEXT" />
+                    </cursor>
+                </TextField>
+                <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="110.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@users.png" />
+                    </image>
+                </ImageView>
+                <PasswordField fx:id="loginPasswordPasswordField" layoutX="150.0" layoutY="140.0" prefHeight="30.0" prefWidth="300.0" promptText="Password" style="-fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;">
+                    <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                    </font>
+                </PasswordField>
+                <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="110.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@lock.png" />
+                    </image>
+                </ImageView>
+                <CheckBox layoutX="150.0" layoutY="195.0" mnemonicParsing="false" style="-fx-text-fill: #A9A9A9;" text="Remember Me">
+                    <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                    </font>
+                </CheckBox>
+<!--                <Button layoutX="190.0" layoutY="235.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #A9A9A9;" text="Forgot your Password?" underline="true">-->
+<!--                    <font>-->
+<!--                        <Font size="15.0" />-->
+<!--                    </font>-->
+<!--                </Button>-->
+                <Label fx:id="invalidLoginCredentials" alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="175.0" prefHeight="16.0" prefWidth="300.0" textAlignment="CENTER" textFill="RED">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Label>
+                <Button fx:id="LoginButton" layoutX="335.0" layoutY="195.0" mnemonicParsing="false" style="-fx-background-color: #24a0ed; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #24a0ed;" text="Login"
+                onAction="#onLoginButtonClick">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <!-- End of Login Form -->
+
+                <!-- A simple line Separator -->
+                <Line endX="500.0" endY="380.0" fill="DARKGRAY" layoutY="-110.0" opacity="0.5" startX="100.0" startY="380.0" stroke="#a8a8a8ad" strokeLineJoin="BEVEL" strokeWidth="3.0" />
+
+
+
+            </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="100.0" left="100.0" right="1000.0" top="100.0" />
+         </padding>
+        </AnchorPane>
+    </right>
+    <!-- Ending of the left part of the Borderpane -->
+
+    <!-- Beginning of the bottom part of the Borderpane -->
+    <bottom>
+
+        <!-- Simple Copyright -->
+        <Label prefHeight="16.0" prefWidth="107.0" style="-fx-text-fill: #B9a9a9;" text="Shop © 2021" BorderPane.alignment="CENTER" />
+    </bottom>
+    <!-- Ending of the left part of the Borderpane -->
+
+</BorderPane>

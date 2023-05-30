@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.neu.csye6200.bankui.controller.CustomerController"
+      prefHeight="400.0" prefWidth="600.0">
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+    <Label text="Email ID : " GridPane.columnIndex="0"
+           GridPane.rowIndex="2" >
+    </Label>
+    <!-- Add Email Text Field -->
+    <TextField fx:id="deleteCustomerEmailField" prefHeight="40"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label fx:id="resultDeleteCustomerText" GridPane.columnIndex="0"
+           GridPane.rowIndex="2" >
+    </Label>
+
+    <Button fx:id="deleteButton" text="Delete Customer"
+            prefWidth="200" prefHeight="40" defaultButton="true"
+            GridPane.columnIndex="0" GridPane.rowIndex="4"
+            GridPane.columnSpan="2" GridPane.rowSpan="1"
+            GridPane.halignment="CENTER"
+            GridPane.valignment = "CENTER"
+            onAction="#onDeleteButtonClick">
+        <GridPane.margin>
+            <Insets top="20" right="0" bottom="20" left="0"></Insets>
+        </GridPane.margin>
+    </Button>
+
+    <Button fx:id="backButton" text=" Go Back"
+            prefWidth="200" prefHeight="40" defaultButton="true"
+            GridPane.columnIndex="0" GridPane.rowIndex="4"
+            GridPane.columnSpan="2" GridPane.rowSpan="1"
+            GridPane.halignment="CENTER"
+            GridPane.valignment = "CENTER"
+            onAction="#onBackButtonClick">
+        <VBox.margin>
+            <Insets top="20" right="0" bottom="20" left="0"></Insets>
+        </VBox.margin>
+    </Button>
+
+</VBox>

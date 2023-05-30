@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="1000.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.neu.csye6200.bankui.controller.AccountController">
+
+    <padding><Insets bottom="40" left="40" right="40" top="40" /></padding>
+
+    <Label text="Primary Account Holder : "
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="2">
+    </Label>
+    <!-- Add Primary Account Holder Text Field -->
+    <TextField fx:id="updateAccountPrimAchField"
+               prefHeight="40"
+               GridPane.columnIndex="1"
+               GridPane.rowIndex="2" />
+
+    <Label text="Additional Owners : "
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="2">
+    </Label>
+    <!-- Add Additional Owners Text Field -->
+    <TextField fx:id="updateAccountOwnersField"
+               prefHeight="40"
+               GridPane.columnIndex="1"
+               GridPane.rowIndex="2" />
+
+
+    <Label fx:id="resultUpdateAccountText"
+           prefHeight="149.0"
+           prefWidth="520.0"
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="2"
+           wrapText="true">
+    </Label>
+
+    <Button fx:id="updateButton"
+            defaultButton="true"
+            onAction="#onUpdateAccountButtonClick"
+            prefHeight="40" prefWidth="200"
+            text="Update Account" GridPane.columnIndex="0"
+            GridPane.columnSpan="2" GridPane.halignment="CENTER"
+            GridPane.rowIndex="4" GridPane.rowSpan="1"
+            GridPane.valignment="CENTER">
+        <VBox.margin>
+            <Insets bottom="20" left="0" right="0" top="20" />
+        </VBox.margin>
+    </Button>
+
+    <Button fx:id="backButton"
+            defaultButton="true"
+            onAction="#onBackButtonClick"
+            prefHeight="40" prefWidth="200" text=" Go Back"
+            GridPane.columnIndex="0" GridPane.columnSpan="2"
+            GridPane.halignment="CENTER" GridPane.rowIndex="4"
+            GridPane.rowSpan="1" GridPane.valignment="CENTER">
+        <VBox.margin>
+            <Insets bottom="20" left="0" right="0" top="20" />
+        </VBox.margin>
+    </Button>
+
+</VBox>

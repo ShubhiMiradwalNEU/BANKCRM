@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> XYZ Bank | Sign Up | Login | </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-secondary">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand" href="index.html">Java Bank</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="containerCRUD text-center ">
+    <br><br>
+    <div class="container">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#customerinfoTag" aria-expanded="false" aria-controls="customerinfoTag">
+              Customer Information
+            </button>
+          </h2>
+          <div id="customerinfoTag" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p id="customerinfo"></p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Create Account
+            </button>
+          </h2>
+
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Create Account form</h3>
+
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                    <h6 class="mb-0 me-4">Account Type: </h6>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="type" id="individualCustomer"
+                        value="Checkings" />
+                      <label class="form-check-label" for="individualCustomer">Checking</label>
+                    </div>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="type" id="corporateCustomer" value="Savings" />
+                      <label class="form-check-label" for="corporateCustomer">Savings</label>
+                    </div>
+
+                  </div>
+
+                  <h6 class="mb-0 me-4">Do you want to add addtional account holder?: </h6>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input class="form-check-input" type="radio" name="additional" id="individualCustomer"
+                      value="yes" />
+                    <label class="form-check-label" for="individualCustomer">Yes</label>
+                  </div>
+
+                  <div class="form-check form-check-inline mb-0 me-4">
+                    <input class="form-check-input" type="radio" name="additional" id="corporateCustomer" value="no" />
+                    <label class="form-check-label" for="corporateCustomer">No</label>
+                  </div>
+
+
+                  <div id="add_account_holder" hidden class="form-outline mb-4">
+                    <input type="text" id="customerid" class="form-control form-control-lg" />
+                    <label class="form-label" for="customerid">Customer ID of additional Account holder</label>
+                  </div>
+
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                    <a href="login.html">
+                      <button type="button" id="submit" class="btn btn-warning btn-lg ms-2">Submit
+                        form</button>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              View Accounts
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p><b>Accounts Linked to Customer:</b></p>
+              <div id="accounts">
+                <div hidden id="accountcard" style="margin-top: 20px;" class="container">
+                  <p><b>Account ID: </b><span id="accountid">12345678</span> <b id="type"></b></p>
+                  <p>Account Status: <span id="accountstatus"></span></p>
+                  <p>Account Balance: $<span id="accountbalance"></span></p>
+                  <h5>Transactions: </h5>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody id="transactions">
+
+
+                    </tbody>
+                  </table>
+                  <div class="viewAccountButtons">
+                    <button id="download" class="btn btn-success">Download Statement</button>
+                    <!-- Button trigger modal -->
+                    <button id="togglebutton" aria-expanded="false" type="button" class="btn btn-primary"
+                      data-bs-toggle="collapse" data-bs-target="#showadd">
+                      Add Transaction
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="container collapse" aria-expanded="false" id="showadd">
+                      <form id="transactionform">
+                        <div class="form-group">
+                          <label for="amount">Amount</label>
+                          <input type="number" class="form-control" id="amount">
+                        </div>
+                        <div class="form-group">
+                          <label for="transactiontype">Credit/Debit</label>
+                          <select class="form-control" id="transactiontype">
+                            <option value="Credit">Credit</option>
+                            <option value="Debit">Debit</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Add</button>
+                      </form>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- <footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">Java Bank</a>
+    </div>
+  </footer> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      let customer = JSON.parse(localStorage.getItem("customer"));
+      let display = "<b>CUSTOMER ID</b>: " + customer.id + "<br/> <b>NAME</b>:"
+        + customer.firstName + "<br/> <b>ADDRESS</b>: " + customer.st_addr + " " + customer.city + " " + customer.state + " " +
+        customer.zipcode + "<br/> <b>CUSTOMER TYPE</b>: " + customer.type + "<br/> <b>EMAIL</b>: " + customer.email +
+        "<br/> <b>Phone</b>: " + customer.phone;
+      $("#customerinfo").html(display);
+    });
+
+
+    $('input[type=radio][name=additional]').change(function () {
+      if (this.value == 'yes') {
+        $("#add_account_holder").attr("hidden", null);
+      }
+      else if (this.value == 'no') {
+        $("#add_account_holder").attr("hidden", "hidden");
+        $("#customerid").val(null);
+      }
+    });
+
+    $("#submit").click(function (e) {
+      e.preventDefault();
+      let customer = JSON.parse(localStorage.getItem("customer"));
+      let customerid = customer.id;
+      let additional = $("#customerid").val();
+      let type = $('input[name="type"]:checked').val();
+      let account = {};
+      if (additional != "" && additional != null) {
+        account = {
+          p_ac_h: customerid,
+          owner: [customerid, additional],
+          type: type
+        }
+      } else {
+        account = {
+          p_ac_h: customerid,
+          owner: [customerid],
+          type: type
+        }
+      }
+
+      $.ajax({
+        url: 'http://localhost:8080/account/add',
+        type: 'post',
+        dataType: 'json',
+        data: JSON.stringify(account),
+        headers: {
+          "Content-Type": 'application/json',
+          'Accept': 'application/json'
+        },
+        success: function (data) {
+          console.info(data);
+          if (data) {
+            alert("Account Created");
+            window.location = 'crudOperations.html';
+          } else {
+            alert("failed");
+          }
+
+        },
+        error: function (jqXHR, status, err) {
+          alert("failed");
+        }
+      });
+    });
+
+    $("#accounts").ready(function () {
+      let customer = JSON.parse(localStorage.getItem("customer"));
+      let accounts = document.getElementById("accounts");
+      let accountcard = document.getElementById("accountcard");
+      console.log(accounts);
+      $.ajax({
+        url: 'http://localhost:8080/account/getCustomerAccounts/' + customer.id,
+        type: 'get',
+        dataType: 'json',
+        headers: {
+          "Content-Type": 'application/json',
+          'Accept': 'application/json'
+        },
+        success: function (data) {
+          console.info(data);
+          if (data) {
+            data.forEach(account => {
+              let accountDisplay = accountcard.cloneNode(true);
+              accountDisplay.id = "acc" + account.id;
+              accountDisplay.querySelector("#accountid").innerHTML = account.id;
+              accountDisplay.querySelector("#accountbalance").innerText = account.acc_bal;
+              accountDisplay.querySelector("#type").innerText = account.type; accountstatus
+              accountDisplay.querySelector("#accountstatus").innerText = account.acc_status;
+              accountDisplay.querySelector("#togglebutton").setAttribute("data-bs-target", "#mod" + account.id);
+              accountDisplay.querySelector("#showadd").id = "mod" + account.id;
+              accountDisplay.querySelector("#transactionform").id = "form" + account.id;
+              accountDisplay.querySelector("#download").id = "download" + account.id;
+
+
+              accountDisplay.hidden = "";
+              let transactions = accountDisplay.querySelector("#transactions");
+              console.log(account.transactions);
+              if (account.transactions) {
+                account.transactions.forEach(tran => {
+                  console.log(tran);
+                  let row = document.createElement("tr");
+                  let th = document.createElement("th");
+                  th.innerText = tran.timestamp;
+                  row.appendChild(th);
+
+                  let td = document.createElement("td");
+                  td.innerText = tran.id;
+                  row.appendChild(td);
+
+                  td = document.createElement("td");
+                  td.innerText = tran.amount;
+                  row.appendChild(td);
+
+
+                  td = document.createElement("td");
+                  td.innerText = tran.type;
+                  row.appendChild(td);
+
+                  transactions.appendChild(row);
+
+                });
+
+              }
+              console.log(accountDisplay);
+              accounts.appendChild(accountDisplay);
+              $("#download"+account.id).click(function (e) {
+                e.preventDefault();
+                window.location.href = "http://localhost:8080/account/getAccountStatement/" +account.id;
+              });
+              let form = accountDisplay.querySelector("#transactionform");
+              $("#form" + account.id).submit(function (e) {
+                e.preventDefault();
+                console.log(e.target);
+                let accountid = e.target.id.substring(4);
+                let customerid = JSON.parse(localStorage.getItem("customer")).id;
+                console.log(customerid);
+                let amount = e.target.querySelector("#amount").value;
+                let type = e.target.querySelector("#transactiontype").value;
+                let transaction = {
+                  acc_id: accountid,
+                  cust_id: customerid,
+                  type: type,
+                  amount: amount
+                }
+                $.ajax({
+                  url: 'http://localhost:8080/account/addTransaction',
+                  type: 'post',
+                  dataType: 'json',
+                  data: JSON.stringify(transaction),
+                  headers: {
+                    "Content-Type": 'application/json',
+                    'Accept': 'application/json'
+                  },
+                  success: function (data) {
+                    console.info(data);
+                    if (data) {
+                      alert("Transaction Added");
+                      window.location = 'crudOperations.html';
+                    } else {
+                      alert("failed");
+                    }
+
+                  },
+                  error: function (jqXHR, status, err) {
+                    alert("failed");
+                  }
+                });
+              })
+
+
+            });
+
+          } else {
+            alert("failed");
+          }
+
+        },
+        error: function (jqXHR, status, err) {
+          alert("failed");
+        }
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
